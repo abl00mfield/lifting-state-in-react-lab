@@ -1,4 +1,5 @@
 // src/components/IngredientList/IngredientList.jsx
+import Ingredient from "../Ingredient/Ingredient";
 
 const IngredientList = ({ ingredients, addToBurger }) => {
   const handleClick = (event) => {
@@ -7,27 +8,23 @@ const IngredientList = ({ ingredients, addToBurger }) => {
     );
     const newIngredient = {
       ...burgerIngredient,
-      id: Date.now() + Math.random(), // 👈 unique timestamp + random number
+      id: Date.now() + Math.random(), // unique timestamp + random number
     };
-    console.log(newIngredient);
+
     addToBurger(newIngredient);
   };
 
   return (
     <ul>
-      {ingredients.map((ingredient) => {
-        return (
-          <li
-            key={ingredient.name}
-            style={{ backgroundColor: ingredient.color }}
-          >
-            {ingredient.name}
-            <button name={ingredient.name} onClick={handleClick}>
-              +
-            </button>
-          </li>
-        );
-      })}
+      {ingredients.map((ingredient) => (
+        <Ingredient
+          key={ingredient.name}
+          ingredient={ingredient}
+          onClick={handleClick}
+          buttonText="+"
+          buttonName={ingredient.name}
+        />
+      ))}
     </ul>
   );
 };
