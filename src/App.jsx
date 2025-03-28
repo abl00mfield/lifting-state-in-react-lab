@@ -23,14 +23,16 @@ const App = () => {
     { name: "Swiss Cheese", color: "#F1E1A8" },
   ];
 
-  const [stack, setStack] = useState([]);
+  const [stack, setStack] = useState([]); //state to hold burger ingredients
 
   const addToBurger = (ingredient) => {
+    //adds an ingredient to the burger
     const newStack = [ingredient, ...stack];
     setStack(newStack);
   };
 
   const removeFromBurger = (indexToRemove) => {
+    //removes an ingredient from the burger
     let newStack = [...stack];
     newStack.splice(indexToRemove, 1);
     setStack(newStack);

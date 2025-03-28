@@ -17,7 +17,7 @@ const BurgerStack = ({ stack, removeFromBurger }) => {
             ingredient={ingredient}
             onClick={handleClick}
             buttonText="X"
-            buttonName={index}
+            buttonName={index} //this makes sure to remove the ingredient that is clicked on
           />
         ))
       )}

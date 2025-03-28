@@ -1,3 +1,5 @@
+//basic reusable burger ingredient
+
 const Ingredient = ({ ingredient, onClick, buttonText, buttonName }) => {
   return (
     <li style={{ backgroundColor: ingredient.color }}>
